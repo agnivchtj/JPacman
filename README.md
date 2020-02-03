@@ -1,8 +1,6 @@
 # Pacman
 
-# README
-
-# Getting Started
+## Getting Started
 
 IntelliJ
 
@@ -11,7 +9,7 @@ IntelliJ
 3. Select 'Gradle' in the following screen as external model, and click 'Next'
 4. In the next screen, optionally adjust the Gradle options and click 'Finish'
 
-# Objective
+## Objective
 
 - What was the learning outcome?
 
