@@ -1,0 +1,36 @@
+# Build artifacts
+build/**
+.gradle/**
+out/**
+
+# Not strictly necessary, however, *.jar files are often ignored and this one is required by the Gradle wrapper.
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.classpath
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# Mac
+.DS_Store

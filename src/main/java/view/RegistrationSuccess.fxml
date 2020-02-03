@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="successPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistrationSuccessController">
+    <ImageView fitHeight="450.0" fitWidth="700.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../resources/pacman_logo.png" />
+        </image>
+    </ImageView>
+
+    <Button layoutX="246.0" layoutY="276.0" mnemonicParsing="false" onAction="#toLogin" prefHeight="41.0" prefWidth="119.0" stylesheets="@../../resources/styles.css" text="Back to login">
+        <font>
+            <Font name="Segoe UI Black" size="14.0" />
+        </font>
+    </Button>
+
+    <Label layoutX="174.0" layoutY="200.0" prefHeight="47.0" prefWidth="335.0" text="Successfully registered!" textFill="#f0d34f">
+        <font>
+            <Font name="Agency FB" size="35.0" />
+        </font>
+    </Label>
+</AnchorPane>

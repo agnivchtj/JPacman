@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="nicknamePane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NicknameController">
+    <children>
+        <ImageView fitHeight="450.0" fitWidth="700.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/disclaimer_logo.png" />
+            </image>
+        </ImageView>
+
+        <Label layoutX="139.0" layoutY="188.0" text="If you would like to use a nickname, please enter it below." textFill="#e5c005">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+
+        <Button layoutX="432.0" layoutY="29.0" mnemonicParsing="false" onAction="#returnToStart" prefHeight="34.0" prefWidth="145.0" stylesheets="@../../resources/styles.css" text="Return to Start Menu">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Button>
+
+        <Label layoutX="180.0" layoutY="225.0" text="Nickname" textFill="WHITE" />
+        <TextField fx:id="textNickname" layoutX="243.0" layoutY="221.0" promptText="Nickname" />
+
+        <Button layoutX="234.0" layoutY="293.0" mnemonicParsing="false" onAction="#play" prefHeight="61.0" prefWidth="141.0" style="-fx-background-color: #F77D03; -fx-background-radius: 5; -fx-border-color: #D9091C; -fx-border-width: 3; -fx-border-radius: 5;" text="PLAY GAME!">
+            <font>
+                <Font name="Segoe UI Black" size="17.0" />
+            </font>
+        </Button>
+      <CheckBox fx:id="optNickname" layoutX="403.0" layoutY="225.0" mnemonicParsing="false" />
+    </children>
+</AnchorPane>

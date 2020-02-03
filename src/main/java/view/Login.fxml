@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="700.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/pacman_logo.png" />
+         </image>
+      </ImageView>
+
+      <TextField fx:id="textUsername" layoutX="230.0" layoutY="209.0" promptText="Username" />
+      <PasswordField fx:id="textPassword" layoutX="229.0" layoutY="265.0" promptText="Password" />
+      <Button layoutX="269.0" layoutY="326.0" onAction="#login" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" stylesheets="@../../resources/styles.css" text="Login">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Button>
+
+      <Label layoutX="238.0" layoutY="188.0" text="Username" textFill="WHITE" />
+      <Label layoutX="237.0" layoutY="244.0" text="Password" textFill="WHITE" />
+
+      <Label layoutX="211.2" layoutY="301.0" prefHeight="17.0" prefWidth="167.0" text="Don't have an account? Register " textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+
+      <Hyperlink layoutX="366.2" layoutY="298.8" onAction="#registration" prefHeight="17.0" prefWidth="167.0" text="here" textFill="GOLD">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+.button {
+    -fx-background-color: #ffbf00;
+}
+
+.split-menu-button {
+    -fx-background-color: #ffbf00;
+}
+
+.split-menu-button .label {
+    -fx-backgrond-color: #ffbf00;
+}
+
+.split-menu-button .arrow-button {
+    -fx-background-color: #ffbf00;
+}

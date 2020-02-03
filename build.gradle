@@ -1,0 +1,154 @@
+import com.github.spotbugs.SpotBugsTask
+
+plugins {
+    id 'java'
+//    id 'eclipse' // optional (to generate Eclipse project files)
+//    id 'idea' // optional (to generate IntelliJ IDEA project files)
+
+    // Test coverage
+    id 'jacoco'
+
+    // Code style
+    id 'checkstyle'
+
+    // PMD
+    id 'pmd'
+
+    // FindBugs / SpotBugs
+    id "com.github.spotbugs" version "2.0.1"
+
+    // JavaFX
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+
+}
+
+group 'nl.tudelft.cse.sem.template'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 13
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+
+    jacoco {
+        enabled = true
+        includes = ['*']
+        excludes = ['*.gui.*']
+    }
+
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+
+    compile 'com.jfoenix:jfoenix:9.0.9'
+
+    // Argon2 for password hashing
+    compile 'de.mkammerer:argon2-jvm:2.6'
+    compile 'org.apache.commons:commons-io:1.3.2'
+
+    // MySQL Java connector
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
+    runtime "mysql:mysql-connector-java:8.0.18"
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        getClassDirectories().from(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/gui/**'])
+        }))
+    }
+
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+// Source: https://medium.com/@tristan.lins/gradle-und-gitlab-coverage-4b334ed1551c
+task coverageReport() {
+    dependsOn jacocoTestReport
+
+    def reportFile = project.file("build/reports/jacoco/test/jacocoTestReport.xml")
+    inputs.file(reportFile)
+
+    doLast {
+        def slurper = new XmlSlurper()
+        slurper.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
+        slurper.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
+        def xml = slurper.parse(reportFile)
+        def counter = xml.counter.find {
+            node -> node.@type == 'BRANCH'
+        }
+        def missed = counter.@missed.toDouble()
+        def covered = counter.@covered.toDouble()
+        def total = missed + covered
+        def percentage = covered / total * 100
+
+        printf "Missed %.0f branches%n", missed
+        printf "Covered %.0f branches%n", covered
+        printf "Total branch coverage: %.0f%%%n", percentage
+    }
+}
+
+jacocoTestCoverageVerification {
+
+    violationRules {
+        rule {
+            enabled = true
+            element = 'CLASS'
+            includes = ['*']
+
+            limit {
+                minimum = 0.5
+            }
+        }
+    }
+}
+
+checkstyle {
+    toolVersion "8.25"
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+}
+
+pmd {
+    incrementalAnalysis = true
+}
+
+spotbugs {
+    sourceSets = [sourceSets.main]
+    ignoreFailures = false
+    effort = "default"
+    reportLevel = "high"
+    visitors = ["FindSqlInjection", "SwitchFallthrough"]
+    excludeFilter = file("$rootProject.projectDir/config/spotbugs/excludeFilter.xml")
+    toolVersion = '4.0.0-beta4'
+}
+
+javafx {
+    version = "13"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+task execute(type: JavaExec) {
+    main = "HelloWorld"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+tasks.withType(SpotBugsTask) {
+    reports.xml.enabled = false
+    reports.html.enabled = true
+}
+repositories { jcenter() }
+dependencies { testCompile "org.mockito:mockito-core:+"
+}
+
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}

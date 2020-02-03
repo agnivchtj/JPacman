@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="statisticsPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GeneralStatisticsController">
+    <children>
+        <ImageView fitHeight="450.0" fitWidth="700.0" layoutY="-38.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/pacman_logo.png" />
+            </image>
+        </ImageView>
+
+        <Button layoutX="508.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="17.0" prefWidth="65.0" stylesheets="@../../resources/styles.css" text="Back">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Button>
+        <Pane layoutX="45.0" layoutY="178.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="22.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="45.0" layoutY="224.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blocks walked" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="45.0" layoutY="271.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pallets Eaten" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="305.0" layoutY="179.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="16.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="305.0" layoutY="224.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="22.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Won" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="305.0" layoutY="271.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="24.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Level" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="45.0" layoutY="316.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text layoutX="25.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Score" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="176.0" layoutY="179.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="totalPoints" layoutX="19.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="176.0" layoutY="224.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="blocksWalked" layoutX="18.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="176.0" layoutY="271.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="pelletsEaten" layoutX="18.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="434.0" layoutY="179.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="gamesPlayed" layoutX="16.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children></Pane>
+        <Pane layoutX="434.0" layoutY="224.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="gamesWon" layoutX="15.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children></Pane>
+        <Pane layoutX="434.0" layoutY="270.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="maxLevel" layoutX="18.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children></Pane>
+        <Pane layoutX="176.0" layoutY="316.0" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #ffbf00; -fx-background-radius: 5;" stylesheets="@../../resources/styles.css">
+            <children>
+                <Text fx:id="maxScore" layoutX="15.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Points" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+            </children></Pane>
+        <Button layoutX="306.0" layoutY="315.0" onAction="#enterNickname" prefHeight="31.5" prefWidth="236.0" style="-fx-background-color: #F77D03; -fx-border-color: #D9091C; -fx-border-width: 3; -fx-border-radius: 5; -fx-background-radius: 5;" text="ENTER!" textAlignment="CENTER">
+            <font>
+                <Font name="Courier New Bold" size="15.0" />
+            </font>
+        </Button>
+
+    </children>
+</AnchorPane>
